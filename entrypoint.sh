@@ -79,14 +79,7 @@ done
 # Modify the configuration variables using sed
 if [ -f "$SERVER_CONFIG_PATH" ]; then
 	echo "Found configuration file - replacing variables"
-	sed -i "s/^ServerName\s*=.*/ServerName $(printf '%s\n' "=$SERVER_NAME" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
 	sed -i "s/^MaxPlayerCount\s*=.*/MaxPlayerCount $(printf '%s\n' "=$PLAYERS" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
-	sed -i "s/^WelcomeMessage\s*=.*/WelcomeMessage $(printf '%s\n' "=$MOTD" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
-	sed -i "s/^ProbyAdminPassword\s*=.*/ProbyAdminPassword $(printf '%s\n' "=$PROBY_PASS" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
-  	sed -i "s/^SeniorAdminPassword\s*=.*/SeniorAdminPassword $(printf '%s\n' "=$SENIOR_PASS" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
-	sed -i "s/^AdminPassword\s*=.*/AdminPassword $(printf '%s\n' "=$ADMIN_PASS" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
-  	sed -i "s/^WhiteListIsEnabled\s*=.*/WhiteListIsEnabled $(printf '%s\n' "=$WHITELIST" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
-	sed -i "s/^#\{0,1\}ServerPassword\s*=.*/ServerPassword $(printf '%s\n' "=$SERVER_PASS" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
 	sed -i "s/^PortID\s*=.*/PortID $(printf '%s\n' "=$SERVER_PORT" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
   	sed -i "s/^SteamGamePortID\s*=.*/SteamGamePortID $(printf '%s\n' "=$STEAM_GAME_PORT" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
 	sed -i "s/^SteamQueryPortID\s*=.*/SteamQueryPortID $(printf '%s\n' "=$STEAM_QUERY_PORT" | sed -e 's/[\/&]/\\&/g')/g" "$SERVER_CONFIG_PATH"
