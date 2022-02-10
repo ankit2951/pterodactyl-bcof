@@ -32,9 +32,9 @@ else
     echo -e "Not updating game server as auto update was set to 0. Starting Server"
 fi
 
-if [[ $XVFB == 1 ]]; then
-        Xvfb :0 -screen 0 ${DISPLAY_WIDTH}x${DISPLAY_HEIGHT}x${DISPLAY_DEPTH} &
-fi
+# Spawn a virtual frame buffer - Replace with xvfb-run
+Xvfb :0 -screen 0 1024x768x16 -ac &
+DISPLAY=:0
 
 # Install necessary to run packages
 echo "First launch will throw some errors. Ignore them"
