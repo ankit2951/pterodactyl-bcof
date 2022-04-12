@@ -59,7 +59,7 @@
             "name": "Steam User",
             "description": "Steam User ID",
             "env_variable": "STEAM_USER",
-            "default_value": "holdfastupdate",
+            "default_value": "",
             "user_viewable": false,
             "user_editable": false,
             "rules": "required|string|max:50"
@@ -68,7 +68,7 @@
             "name": "Steam Password",
             "description": "Steam Password",
             "env_variable": "STEAM_PASS",
-            "default_value": "Cubswin62497!",
+            "default_value": "",
             "user_viewable": false,
             "user_editable": false,
             "rules": "nullable|string|max:255"
